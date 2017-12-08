@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+*Below sets the layout of the screen including the width and height dimensions and sets the background to a black tone to match the app colour scheme.
+This section also sets the view as relative layout to align all the fields on the screen in specific positions.*
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C">
+
+        <!--
+        *All tags below are used to set attributes to their pertaining fields including Buttons and Text Views and logos.
+        The attributes given to fields below include: Height, Width, Text size, Text colour, Text Content and Background,
+        these are all used to make the layout logical and aesthetically pleasing.
+        -->
+
+        <Button
+            android:id="@+id/SubmitButton"
+            android:layout_width="1000dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/PasswordConfirm"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp" />
+
+        <!--Attributes for the Email edit text so that the Stakeholder can enter their email to sign up-->
+        <EditText
+            android:id="@+id/EmailText"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/PasswordText"
+            android:layout_alignStart="@+id/PasswordText"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="E-mail "
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="24sp"
+            tools:ignore="DuplicateIds" />
+
+        <!--Attributes for the Create account text view to act as a title for the screen-->
+        <TextView
+            android:id="@+id/Signup_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="49dp"
+            android:gravity="center"
+            android:text="Create Account"
+            android:textAlignment="center"
+            android:textColor="#5fbb4e"
+            android:textSize="25sp" />
+
+        <!--Attributes for the Password edit text so that the Stakeholder can fill it in to sign up-->
+        <EditText
+            android:id="@+id/PasswordText"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/EmailText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="24sp" />
+
+        <!--Attributes for the further information button to inform the Stakeholder on sign up protocols-->
+        <ImageButton
+            android:id="@+id/FurtherInfoButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:tint="@android:color/holo_green_light"
+            app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+
+        <!--Attributes for the Login button used to bring the Stakeholder to the login page-->
+        <TextView
+            android:id="@+id/LoginView"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/SubmitButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:text="Already have an Account? Login!"
+            android:textColor="#5fbb4e"
+            android:textSize="20sp" />
+
+        <!--Attributes for the Logo image view-->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="230dp"
+            android:layout_height="190dp"
+            android:layout_below="@+id/Signup_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@mipmap/logo" />
+
+
+        <!--Attributes for Password confirmation text view-->
+        <EditText
+            android:id="@+id/PasswordConfirm"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/PasswordText"
+            android:layout_alignRight="@+id/PasswordText"
+            android:layout_below="@+id/PasswordText"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="24sp" />
+    </RelativeLayout>
+

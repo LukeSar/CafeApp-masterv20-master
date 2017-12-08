@@ -1,0 +1,674 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    tools:context="com.example.lukesartori.myapp.Tab1"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/frame_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="casual" />
+
+            <TextView
+                android:id="@+id/BreakTitle"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="59dp"
+                android:fontFamily="cursive"
+                android:text="Breakfast"
+                android:textColor="#FFEB69"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/SausageButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/BaconButton"
+                android:layout_marginLeft="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Sausage Sandwhich"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/BaconView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignLeft="@+id/SausageView"
+                android:layout_alignStart="@+id/SausageView"
+                android:layout_below="@+id/BreakTitle"
+                android:layout_marginTop="75dp"
+                android:fontFamily="casual"
+                android:text="£4.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/ToastButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/SausageButton"
+                android:layout_alignStart="@+id/SausageButton"
+                android:layout_below="@+id/SausageButton"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Toast (2 Slices)"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/ChocolateButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ToastButton"
+                android:layout_alignStart="@+id/ToastButton"
+                android:layout_below="@+id/ToastButton"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Chocolate Croissant"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/PlainButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ChocolateButton"
+                android:layout_alignStart="@+id/ChocolateButton"
+                android:layout_below="@+id/ChocolateButton"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Plain Croissant"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/FruitButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/PlainButton"
+                android:layout_alignRight="@+id/PlainButton"
+                android:layout_below="@+id/PlainButton"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Fruit Salad"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/SausageView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/SausageButton"
+                android:layout_alignBottom="@+id/SausageButton"
+                android:layout_toEndOf="@+id/BreakTitle"
+                android:layout_toRightOf="@+id/BreakTitle"
+                android:fontFamily="casual"
+                android:text="£4.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ToastView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/ToastButton"
+                android:layout_alignBottom="@+id/ToastButton"
+                android:layout_alignLeft="@+id/SausageView"
+                android:layout_alignStart="@+id/SausageView"
+                android:fontFamily="casual"
+                android:text="£2.50"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ChocolateView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/ChocolateButton"
+                android:layout_alignBottom="@+id/ChocolateButton"
+                android:layout_alignLeft="@+id/ToastView"
+                android:layout_alignStart="@+id/ToastView"
+                android:fontFamily="casual"
+                android:text="£1.20"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/PlainView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/PlainButton"
+                android:layout_alignBottom="@+id/PlainButton"
+                android:layout_alignLeft="@+id/ChocolateView"
+                android:layout_alignStart="@+id/ChocolateView"
+                android:fontFamily="casual"
+                android:text="£0.80"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/FruitView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/FruitButton"
+                android:layout_alignBottom="@+id/FruitButton"
+                android:layout_alignLeft="@+id/PlainView"
+                android:layout_alignStart="@+id/PlainView"
+                android:text="£2.50"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/BaconButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="21dp"
+                android:text="Orders are limited to £30!"
+                android:textColor="#ff5f5f"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/BaconButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/BaconView"
+                android:layout_alignBottom="@+id/BaconView"
+                android:layout_alignLeft="@+id/SausageButton"
+                android:layout_alignStart="@+id/SausageButton"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Bacon Sandwich"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/LunchTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/BologneseButton"
+                android:layout_alignRight="@+id/BologneseButton"
+                android:layout_below="@+id/FruitButton"
+                android:layout_marginTop="21dp"
+                android:fontFamily="cursive"
+                android:text="Lunch"
+                android:textColor="#FFEB69"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/BologneseButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/FruitButton"
+                android:layout_alignStart="@+id/FruitButton"
+                android:layout_below="@+id/LunchTitle"
+                android:layout_marginTop="37dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Bolognese Pasta"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/CarbonaraButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/BologneseButton"
+                android:layout_alignStart="@+id/BologneseButton"
+                android:layout_below="@+id/BologneseButton"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Carbonara Pasta"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/VegButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/CarbonaraButton"
+                android:layout_alignStart="@+id/CarbonaraButton"
+                android:layout_below="@+id/CarbonaraButton"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Vegetable Pasta"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/HamButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/VegButton"
+                android:layout_alignStart="@+id/VegButton"
+                android:layout_below="@+id/VegButton"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Ham and Cheese Sandwhich"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/SaladButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/HamButton"
+                android:layout_alignStart="@+id/HamButton"
+                android:layout_below="@+id/HamButton"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Salad Box"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/BologneseView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/BologneseButton"
+                android:layout_alignBottom="@+id/BologneseButton"
+                android:layout_alignLeft="@+id/FruitView"
+                android:layout_alignStart="@+id/FruitView"
+                android:fontFamily="casual"
+                android:text="£5.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/CarbonaraView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/CarbonaraButton"
+                android:layout_alignBottom="@+id/CarbonaraButton"
+                android:layout_alignLeft="@+id/BologneseView"
+                android:layout_alignStart="@+id/BologneseView"
+                android:fontFamily="casual"
+                android:text="£5.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/VegView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/VegButton"
+                android:layout_alignBottom="@+id/VegButton"
+                android:layout_alignLeft="@+id/CarbonaraView"
+                android:layout_alignStart="@+id/CarbonaraView"
+                android:fontFamily="casual"
+                android:text="£5.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/HamView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignLeft="@+id/VegView"
+                android:layout_alignStart="@+id/VegView"
+                android:layout_alignTop="@+id/HamButton"
+                android:layout_marginTop="8dp"
+                android:fontFamily="casual"
+                android:text="£3.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/SaladView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignLeft="@+id/HamView"
+                android:layout_alignStart="@+id/HamView"
+                android:layout_alignTop="@+id/SaladButton"
+                android:layout_marginTop="11dp"
+                android:fontFamily="casual"
+                android:text="£4.50"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/MLasagnaButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/SaladButton"
+                android:layout_alignStart="@+id/SaladButton"
+                android:layout_below="@+id/SaladButton"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Meat Lasagna"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/MLasagnaView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignLeft="@+id/SaladView"
+                android:layout_alignStart="@+id/SaladView"
+                android:layout_alignTop="@+id/MLasagnaButton"
+                android:layout_marginTop="8dp"
+                android:text="£6.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/VLasagnaButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/MLasagnaButton"
+                android:layout_alignStart="@+id/MLasagnaButton"
+                android:layout_below="@+id/MLasagnaButton"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Veg Lasagna"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/VLasagnaView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBottom="@+id/VLasagnaButton"
+                android:layout_alignLeft="@+id/MLasagnaView"
+                android:layout_alignStart="@+id/MLasagnaView"
+                android:layout_marginBottom="12dp"
+                android:text="£6.00"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/DrinkTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/VLasagnaView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="28dp"
+                android:fontFamily="cursive"
+                android:text="Drinks"
+                android:textColor="#FFEB69"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/CokeButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/VLasagnaButton"
+                android:layout_alignStart="@+id/VLasagnaButton"
+                android:layout_below="@+id/DrinkTitle"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Coke"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/DietCokeButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/CokeButton"
+                android:layout_alignStart="@+id/CokeButton"
+                android:layout_below="@+id/CokeButton"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Diet Coke"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/FantaButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/DietCokeButton"
+                android:layout_alignStart="@+id/DietCokeButton"
+                android:layout_below="@+id/DietCokeButton"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Fanta"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/SpriteButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/FantaButton"
+                android:layout_alignStart="@+id/FantaButton"
+                android:layout_below="@+id/FantaButton"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Sprite"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/WaterButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/SpriteButton"
+                android:layout_alignStart="@+id/SpriteButton"
+                android:layout_below="@+id/SpriteButton"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Water"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/CokeView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_above="@+id/DietCokeButton"
+                android:layout_alignLeft="@+id/VLasagnaView"
+                android:layout_alignStart="@+id/VLasagnaView"
+                android:fontFamily="casual"
+                android:text="£1.00"
+                android:textColor="#FFEB69" />
+
+            <TextView
+                android:id="@+id/DietCokeView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/DietCokeButton"
+                android:layout_alignBottom="@+id/DietCokeButton"
+                android:layout_alignLeft="@+id/CokeView"
+                android:layout_alignStart="@+id/CokeView"
+                android:fontFamily="casual"
+                android:text="£1.00"
+                android:textColor="#FFEB69" />
+
+            <TextView
+                android:id="@+id/FantaView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignLeft="@+id/DietCokeView"
+                android:layout_alignStart="@+id/DietCokeView"
+                android:layout_alignTop="@+id/FantaButton"
+                android:layout_marginTop="12dp"
+                android:fontFamily="casual"
+                android:text="£1.00"
+                android:textColor="#FFEB69" />
+
+            <TextView
+                android:id="@+id/SpriteView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/SpriteButton"
+                android:layout_alignBottom="@+id/SpriteButton"
+                android:layout_alignLeft="@+id/FantaView"
+                android:layout_alignStart="@+id/FantaView"
+                android:fontFamily="casual"
+                android:text="£1.00"
+                android:textColor="#FFEB69" />
+
+            <TextView
+                android:id="@+id/WaterView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBottom="@+id/WaterButton"
+                android:layout_alignLeft="@+id/SpriteView"
+                android:layout_alignStart="@+id/SpriteView"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="casual"
+                android:text="£1.20"
+                android:textColor="#FFEB69" />
+
+            <Button
+                android:id="@+id/SparklingWaterButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/WaterButton"
+                android:layout_alignStart="@+id/WaterButton"
+                android:layout_below="@+id/WaterView"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/menubutton"
+                android:fontFamily="casual"
+                android:text="Sparkling Water"
+                android:textAllCaps="false"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/SparklingWaterView"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignBaseline="@+id/SparklingWaterButton"
+                android:layout_alignBottom="@+id/SparklingWaterButton"
+                android:layout_alignLeft="@+id/WaterView"
+                android:layout_alignStart="@+id/WaterView"
+                android:fontFamily="casual"
+                android:text="£1.50"
+                android:textColor="#FFEB69" />
+
+
+            <TextView
+                android:id="@+id/CheckoutTitle"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/BreakTitle"
+                android:layout_alignStart="@+id/BreakTitle"
+                android:layout_below="@+id/SparklingWaterButton"
+                android:layout_marginTop="17dp"
+                android:fontFamily="cursive"
+                android:text="Checkout"
+                android:textColor="#FFEB69"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/SparklingWaterButton"
+                android:layout_alignStart="@+id/SparklingWaterButton"
+                android:layout_below="@+id/CheckoutTitle"
+                android:layout_marginTop="18dp"
+                android:text="Total:"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/CashImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_below="@+id/textView3"
+                android:layout_marginTop="9dp"
+                android:src="@android:drawable/checkbox_off_background" />
+
+            <TextView
+                android:id="@+id/CashView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/CashImage"
+                android:layout_marginEnd="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_toLeftOf="@+id/LunchTitle"
+                android:layout_toStartOf="@+id/LunchTitle"
+                android:text="Pay By Cash"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/CardImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/SparklingWaterButton"
+                android:layout_alignRight="@+id/SparklingWaterButton"
+                android:layout_alignTop="@+id/CashView"
+                android:src="@android:drawable/checkbox_off_background" />
+
+            <TextView
+                android:id="@+id/CardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/SparklingWaterView"
+                android:layout_alignStart="@+id/SparklingWaterView"
+                android:layout_alignTop="@+id/CardImage"
+                android:text="Pay By Card"
+                android:textColor="#FFEB69"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--
+*Below sets the layout of the screen including the width and height dimensions and sets the background to a black tone to match the app colour scheme.
+This section also sets the view as relative layout to align all the fields on the screen in specific positions.*
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.lukesartori.myapp.MainActivity">
+
+
+    <!--
+       *All tags below are used to set attributes to their pertaining fields including Buttons and Text Views and logos.
+       The attributes given to fields below include: Height, Width, Text size, Text colour, Text Content and Background,
+       these are all used to make the layout logical and aesthetically pleasing.
+    -->
+
+    <!-- android background calls exterior layout resource to set the background of the button -->
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/CreateAccountView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#999b97"
+        android:textSize="24sp" />
+
+    <!--Attributes for logo to make the screen more aesthetically pleasing-->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@+id/EmailText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="19dp"
+        app:srcCompat="@mipmap/logo" />
+
+    <!--Attributes for create account view to bring the Stakeholder to the sign up screen-->
+    <TextView
+        android:id="@+id/CreateAccountView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/LoginButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/LoginButton"
+        android:layout_marginBottom="43dp"
+        android:text="Not Signed up Yet? Create an Account!"
+        android:textColor="#5fbb4e"
+        android:textColorHint="#6F6F6F"
+        android:textSize="20sp" />
+
+    <!--Attributes for the help button which will bring the stakeholder to the FAQ page-->
+    <Button
+        android:id="@+id/HelpButton"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:text="Help"
+        android:textAllCaps="false"
+        android:textColor="#5fbb4e"
+        android:textSize="24sp" />
+
+    <!--Attributes for the email edit text to allow the stakeholder to login-->
+    <EditText
+        android:id="@+id/EmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textColorHint="#999b97"
+        android:textSize="24sp" />
+
+    <!--Attributes for password edit text so that the stakeholder can login-->
+    <EditText
+        android:id="@+id/PasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/EmailText"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="#999b97"
+        android:textSize="24sp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+*Below sets the layout of the screen including the width and height dimensions and sets the background to a black tone to match the app colour scheme.
+This section also sets the view as relative layout to align all the fields on the screen in specific positions.*
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_help"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:visibility="visible"
+    tools:context="com.example.lukesartori.myapp.HelpActivity">
+
+    <!--
+      *All tags below are used to set attributes to their pertaining fields primarily text views.
+      The attributes given to fields below include: Height, Width, Text size, Text colour, Text Content and Background,
+      these are all used to make the layout logical and aesthetically pleasing.
+      -->
+
+    <!--Attributes for title text view to explain page and make it more aesthetically pleasing-->
+    <TextView
+        android:id="@+id/HelpTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="FAQ'S"
+        android:textAllCaps="false"
+        android:textColor="#5fbb4e"
+        android:textSize="24sp" />
+
+    <!--Attributes for Q1 to explain how to pay for an order-->
+    <TextView
+        android:id="@+id/HoworderQ1"
+        android:layout_width="195dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/HelpTitle"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/faqquestion"
+        android:text="  How can i pay for my order?"
+        android:textColor="@android:color/background_light" />
+
+    <!--Attributes for A1 on how to pay for order-->
+    <TextView
+        android:id="@+id/HoworderA1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/HoworderQ1"
+        android:layout_alignStart="@+id/HoworderQ1"
+        android:layout_below="@+id/HoworderQ1"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/faqanswer"
+        android:text="  Orders can be paid through Cash or In-App billing through \n  the google play store wallet."
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp" />
+
+    <!--Attributes for Q2 to say where the Cafe is-->
+    <TextView
+        android:id="@+id/LocationQ2"
+        android:layout_width="140dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/HoworderA1"
+        android:layout_alignStart="@+id/HoworderA1"
+        android:layout_below="@+id/HoworderA1"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/faqquestion"
+        android:text="  Where is the Cafe?"
+        android:textColor="@android:color/background_light" />
+
+    <!--Attributes for A2 to say where the Cafe is-->
+    <TextView
+        android:id="@+id/LocationA2"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/LocationQ2"
+        android:layout_alignStart="@+id/LocationQ2"
+        android:layout_below="@+id/LocationQ2"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/faqanswer"
+        android:text="  Address: 27 Chiltern St, Marylebone, London W1U 7PJ"
+        android:textColor="@android:color/background_light" />
+
+    <!--Attributes for Q3 to say why information is needed-->
+    <TextView
+        android:id="@+id/InformationQ3"
+        android:layout_width="230dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/LocationA2"
+        android:layout_alignStart="@+id/LocationA2"
+        android:layout_below="@+id/LocationA2"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/faqquestion"
+        android:text="  Why do you need my Information?"
+        android:textColor="@android:color/background_light" />
+
+    <!--Attributes for A3 to say why information is needed-->
+    <TextView
+        android:id="@+id/InformationA3"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignLeft="@+id/InformationQ3"
+        android:layout_alignStart="@+id/InformationQ3"
+        android:layout_below="@+id/InformationQ3"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/faqanswer"
+        android:text="  We need your information so that we can contact you \n  and provide you with an account to access the App all \n  information is kept secure and only used for purposes \n  pertaining to this App, we do not share any information \n  about you with third parties. "
+        android:textColor="@android:color/background_light" />
+
+    <!--Attributes for Q4 to say what can be ordered-->
+    <TextView
+        android:id="@+id/OrderItemsQ4"
+        android:layout_width="215dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/InformationA3"
+        android:layout_alignStart="@+id/InformationA3"
+        android:layout_below="@+id/InformationA3"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/faqquestion"
+        android:text="  What can I order from this App?"
+        android:textColor="@android:color/background_light" />
+
+    <!--Attributes for A4 to say what can be ordered-->
+    <TextView
+        android:id="@+id/OrderItemsA4"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/OrderItemsQ4"
+        android:layout_alignStart="@+id/OrderItemsQ4"
+        android:layout_below="@+id/OrderItemsQ4"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/faqanswer"
+        android:text="  There is a wide variety of items to choose from we have \n  Breakfast foods L unch foods, a wide variety of hot and \n  cold drinks as well as Desserts!"
+        android:textColor="@android:color/background_light" />
+
+    <!--Attributes for Q5 to say how orders are picked up-->
+    <TextView
+        android:id="@+id/PickUpOrderQ5"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/OrderItemsA4"
+        android:layout_alignStart="@+id/OrderItemsA4"
+        android:layout_below="@+id/OrderItemsA4"
+        android:background="@drawable/faqquestion"
+        android:layout_marginTop="9dp"
+        android:textColor="@android:color/background_light"
+        android:text="  How can I pick up my order?" />
+
+    <!--Attributes for A5 to say how orders are picked up-->
+    <TextView
+        android:id="@+id/PickUpOrderA5"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignLeft="@+id/PickUpOrderQ5"
+        android:layout_alignStart="@+id/PickUpOrderQ5"
+        android:layout_below="@+id/PickUpOrderQ5"
+        android:background="@drawable/faqanswer"
+        android:textColor="@android:color/background_light"
+        android:layout_marginTop="12dp"
+        android:text="  Orders are made for collection and will be packaged in \n  takeaway containers for portability." />
+
+</RelativeLayout>

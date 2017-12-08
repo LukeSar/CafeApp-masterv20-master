@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Attributes to set the shape of the pop up box such as color, width, colour, radius and padding.
+So that it looks aesthetically pleasing and works functionally-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#1C1C1C"/>
+    <stroke android:width="3dip" android:color="#5fbb4e" />
+    <corners android:radius="10dip"/>
+    <padding android:left="0dip" android:top="0dip" android:right="0dip" android:bottom="0dip"  />
+</shape>

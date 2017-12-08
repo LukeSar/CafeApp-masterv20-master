@@ -1,0 +1,229 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    tools:context="com.example.lukesartori.myapp.Tab1">
+
+
+    <TextView
+        android:id="@+id/LunchTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:fontFamily="cursive"
+        android:text="Lunch"
+        android:textColor="#FFEB69"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/BologneseButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/LunchTitle"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Bolognese Pasta"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/CarbonaraButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/BologneseButton"
+        android:layout_alignStart="@+id/BologneseButton"
+        android:layout_below="@+id/BologneseButton"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Carbonara Pasta"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/VegButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/CarbonaraButton"
+        android:layout_alignStart="@+id/CarbonaraButton"
+        android:layout_below="@+id/CarbonaraButton"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Vegetable Pasta"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/HamButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/VegButton"
+        android:layout_alignStart="@+id/VegButton"
+        android:layout_below="@+id/VegButton"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Ham and Cheese Sandwhich"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/SaladButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/HamButton"
+        android:layout_alignStart="@+id/HamButton"
+        android:layout_below="@+id/HamButton"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Salad Box"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/BologneseView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/BologneseButton"
+        android:layout_alignBottom="@+id/BologneseButton"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_toEndOf="@+id/BologneseButton"
+        android:layout_toRightOf="@+id/BologneseButton"
+        android:fontFamily="casual"
+        android:text="£5.00"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/CarbonaraView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/CarbonaraButton"
+        android:layout_alignBottom="@+id/CarbonaraButton"
+        android:layout_alignLeft="@+id/BologneseView"
+        android:layout_alignStart="@+id/BologneseView"
+        android:fontFamily="casual"
+        android:text="£5.00"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/VegView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/VegButton"
+        android:layout_alignBottom="@+id/VegButton"
+        android:layout_alignLeft="@+id/CarbonaraView"
+        android:layout_alignStart="@+id/CarbonaraView"
+        android:fontFamily="casual"
+        android:text="£5.00"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/HamView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/VegView"
+        android:layout_alignStart="@+id/VegView"
+        android:layout_alignTop="@+id/HamButton"
+        android:layout_marginTop="8dp"
+        android:fontFamily="casual"
+        android:text="£3.00"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/SaladView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/HamView"
+        android:layout_alignStart="@+id/HamView"
+        android:layout_alignTop="@+id/SaladButton"
+        android:layout_marginTop="11dp"
+        android:fontFamily="casual"
+        android:text="£4.50"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/MLasagnaButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SaladButton"
+        android:layout_alignStart="@+id/SaladButton"
+        android:layout_below="@+id/SaladButton"
+        android:layout_marginTop="14dp"
+        android:fontFamily="casual"
+        android:text="Meat Lasagna"
+        android:textAllCaps="false"
+        android:background="@drawable/menubutton"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/MLasagnaView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/SaladView"
+        android:layout_alignStart="@+id/SaladView"
+        android:layout_alignTop="@+id/MLasagnaButton"
+        android:layout_marginTop="8dp"
+        android:text="£6.00"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/VLasagnaButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/MLasagnaButton"
+        android:layout_alignStart="@+id/MLasagnaButton"
+        android:layout_below="@+id/MLasagnaButton"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Veg Lasagna"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/VLasagnaView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/VLasagnaButton"
+        android:layout_alignLeft="@+id/MLasagnaView"
+        android:layout_alignStart="@+id/MLasagnaView"
+        android:layout_marginBottom="12dp"
+        android:text="£6.00"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/VLasagnaView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Orders are limited to £30!"
+        android:textColor="#ff5f5f"
+        android:textSize="18sp" />
+</RelativeLayout>

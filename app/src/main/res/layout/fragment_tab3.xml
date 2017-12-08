@@ -1,0 +1,197 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    tools:context="com.example.lukesartori.myapp.Tab3">
+
+
+    <TextView
+        android:id="@+id/DrinkTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:fontFamily="cursive"
+        android:text="Drinks"
+        android:textColor="#FFEB69"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/CokeButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/DrinkTitle"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Coke"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/DietCokeButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/CokeButton"
+        android:layout_alignStart="@+id/CokeButton"
+        android:layout_below="@+id/CokeButton"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Diet Coke"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/FantaButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/DietCokeButton"
+        android:layout_alignStart="@+id/DietCokeButton"
+        android:layout_below="@+id/DietCokeButton"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Fanta"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/SpriteButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/FantaButton"
+        android:layout_alignStart="@+id/FantaButton"
+        android:layout_below="@+id/FantaButton"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Sprite"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/WaterButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SpriteButton"
+        android:layout_alignStart="@+id/SpriteButton"
+        android:layout_below="@+id/SpriteButton"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Water"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/CokeView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/CokeButton"
+        android:layout_alignBottom="@+id/CokeButton"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:layout_toEndOf="@+id/CokeButton"
+        android:layout_toRightOf="@+id/CokeButton"
+        android:fontFamily="casual"
+        android:text="£1.00"
+        android:textColor="#FFEB69" />
+
+    <TextView
+        android:id="@+id/DietCokeView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/DietCokeButton"
+        android:layout_alignBottom="@+id/DietCokeButton"
+        android:layout_alignLeft="@+id/CokeView"
+        android:layout_alignStart="@+id/CokeView"
+        android:fontFamily="casual"
+        android:text="£1.00"
+        android:textColor="#FFEB69" />
+
+    <TextView
+        android:id="@+id/FantaView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/DietCokeView"
+        android:layout_alignStart="@+id/DietCokeView"
+        android:layout_alignTop="@+id/FantaButton"
+        android:layout_marginTop="12dp"
+        android:fontFamily="casual"
+        android:text="£1.00"
+        android:textColor="#FFEB69" />
+
+    <TextView
+        android:id="@+id/SpriteView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/SpriteButton"
+        android:layout_alignBottom="@+id/SpriteButton"
+        android:layout_alignLeft="@+id/FantaView"
+        android:layout_alignStart="@+id/FantaView"
+        android:fontFamily="casual"
+        android:text="£1.00"
+        android:textColor="#FFEB69" />
+
+    <TextView
+        android:id="@+id/WaterView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/WaterButton"
+        android:layout_alignLeft="@+id/SpriteView"
+        android:layout_alignStart="@+id/SpriteView"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="casual"
+        android:text="£1.20"
+        android:textColor="#FFEB69" />
+
+    <Button
+        android:id="@+id/SparklingWaterButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/WaterButton"
+        android:layout_alignStart="@+id/WaterButton"
+        android:layout_below="@+id/WaterView"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/menubutton"
+        android:fontFamily="casual"
+        android:text="Sparkling Water"
+        android:textAllCaps="false"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/SparklingWaterView"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@+id/WaterView"
+        android:layout_alignRight="@+id/WaterView"
+        android:layout_alignTop="@+id/SparklingWaterButton"
+        android:layout_marginTop="12dp"
+        android:fontFamily="casual"
+        android:text="£1.50"
+        android:textColor="#FFEB69" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/SparklingWaterButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:text="Orders are limited to £30!"
+        android:textColor="#ff5f5f"
+        android:textSize="18sp" />
+</RelativeLayout>

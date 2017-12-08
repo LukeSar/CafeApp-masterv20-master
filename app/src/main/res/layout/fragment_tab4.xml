@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    tools:context="com.example.lukesartori.myapp.tab4">
+
+
+    <TextView
+        android:id="@+id/CheckoutTitle"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="cursive"
+        android:text="Checkout"
+        android:textColor="#FFEB69"
+        android:textSize="36sp" />
+
+    <ImageButton
+        android:id="@+id/CashImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:src="?android:attr/listChoiceIndicatorSingle" />
+
+    <TextView
+        android:id="@+id/CashView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CashImageButton"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_toEndOf="@+id/CashImageButton"
+        android:layout_toRightOf="@+id/CashImageButton"
+        android:text="Pay By Cash"
+        android:textColor="#FFEB69"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/TotalView"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/CashImageButton"
+        android:layout_alignStart="@+id/CashImageButton"
+        android:layout_below="@+id/CheckoutTitle"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="19dp"
+        android:text="Total:"
+        android:textColor="#FFEB69"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/ViewBacon"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/TotalView"
+        android:layout_alignStart="@+id/TotalView"
+        android:layout_below="@+id/TotalView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="70dp"
+        android:text="TextView" />
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Sets the pop up as relative layout so fields can be specifically positioned and sets height and width of pop up.
+Lastly references to background as boxshape which is a separate layout for the background of the pop up-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/boxshape"
+    android:orientation="vertical">
+
+    <!--Attributes for the pop up for the further information tab-->
+    <TextView
+        android:id="@+id/InfoPopUp"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:text="  1.The Email must contain an '@' symbol
+                        \n
+                        \n  2.The Password must contain at least 6 characters.
+                        \n
+                        \n  3.Password confirmation must match the password \n      previously given." />
+</RelativeLayout>
