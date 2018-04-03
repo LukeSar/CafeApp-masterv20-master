@@ -1,10 +1,13 @@
 package com.example.lukesartori.myapp;
 
+
+import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,25 +15,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Tab1.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Tab1#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Tab1 extends Fragment implements View.OnClickListener {
 
-    Button BaconButton, SuasageButton, ToastButton, ChocolateButton, PlainButton;
-
-
-
-
+    private DatabaseReference mDatabase;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,82 +58,62 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     }
 
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View rootView = inflater.inflate(R.layout.fragment_tab1, container, false);
 
-
-
-
         return rootView;
-        //return inflater.inflate(R.layout.fragment_tab1, container, false);
-
-    }
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-
-        }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
     @Override
     public void onClick(View v) {
 
+
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState)
-    {
-        // TODO Auto-generated method stub
+    public void onActivityCreated(Bundle savedInstanceState) { //When activity loads produce method
         super.onActivityCreated(savedInstanceState);
+        final double[] Total = new double[1]; //Sets total data type to double so that it can represent decimals and sets its index
+        Total[0] = 0.00; //Sets total value to 0.00 to start with
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Order");
+       // mDatabase.child("Order").setValue("Break");
+
+        /*
+        The following on click listeners are all menu items that have been set to add to the total
+        value and change background on click while showing a toast message to make it clear to the
+        Stakeholder that the item has been added.
+         */
+
 
         final Button BaconButton = (Button) getActivity().findViewById(R.id.BaconButton);
         BaconButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BaconButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(),"Bacon Sandwich Added",Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Total[0] += 4.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0])); //Present new total price to the Stakeholder
+                BaconButton.setBackgroundResource(R.drawable.buttonchange);
+                mDatabase.child("Bacon Sandwich").setValue("£4.00");
+
+            }
+        });
 
         final Button SausageButton = (Button) getActivity().findViewById(R.id.SausageButton);
         SausageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SausageButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(),"Sausage Sandwich Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 4.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                SausageButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Sausage Sandwich").setValue("£4.00");
 
             }
         });
@@ -149,8 +122,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         ToastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Toast Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 2.50;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                ToastButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Toast").setValue("£2.50");
             }
         });
 
@@ -158,8 +135,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         ChocolateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ChocolateButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Chocolate Croissant Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 1.20;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                ChocolateButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Chocolate Croissant").setValue("£1.20");
             }
         });
 
@@ -168,8 +149,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         PlainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PlainButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Plain Croissant Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 0.80;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                PlainButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Plain Croissant").setValue("£0.80");
             }
         });
 
@@ -177,17 +162,32 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         FruitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FruitButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Fruit Salad Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 2.50;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                FruitButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Fruit Cup").setValue("£2.50");
             }
         });
+
+            /*
+        The following on click listeners are all menu items that have been set to add to the total
+        value and change background on click while showing a toast message to make it clear to the
+        Stakeholder that the item has been added.
+         */
+
 
         final Button BologneseButton = (Button) getActivity().findViewById(R.id.BologneseButton);
         BologneseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BologneseButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Fruit Salad Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 5.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                BologneseButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Bolognese Pasta").setValue("£5.00");
             }
         });
 
@@ -195,8 +195,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         CarbonaraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CarbonaraButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Carbonara Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 5.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                CarbonaraButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Carbonara Pasta").setValue("£5.00");
             }
         });
 
@@ -204,8 +208,13 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         VegButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                VegButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Veg Pasta Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 5.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                VegButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Vegetable Pasta").setValue("£5.00");
+
             }
         });
 
@@ -213,8 +222,13 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         HamButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HamButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Ham and Cheese Sandwich Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 3.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                HamButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Ham and Cheese Sandwich").setValue("£3.00");
+
             }
         });
 
@@ -222,8 +236,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         SaladButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SaladButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Salad Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 4.50;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                SaladButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Salad Box").setValue("£4.50");
             }
         });
 
@@ -231,8 +249,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         MLasagnaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MLasagnaButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Meat Lasagna Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 6.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                MLasagnaButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Meat Lasagna").setValue("£6.00");
             }
         });
 
@@ -240,17 +262,31 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         VLasagnaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                VLasagnaButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Veg Lasagna Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 6.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                VLasagnaButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Vegetable Lasagna").setValue("£6.00");
             }
         });
+
+               /*
+        The following on click listeners are all menu items that have been set to add to the total
+        value and change background on click while showing a toast message to make it clear to the
+        Stakeholder that the item has been added.
+         */
 
         final Button CokeButton = (Button) getActivity().findViewById(R.id.CokeButton);
         CokeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CokeButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Coke Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 1.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                CokeButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Coke").setValue("£1.00");
             }
         });
 
@@ -258,8 +294,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         DietCokeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DietCokeButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Diet Coke Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 1.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                DietCokeButton.setBackgroundResource(R.drawable.buttonchange);
+                mDatabase.child("Diet Coke").setValue("£1.00");
             }
         });
 
@@ -267,8 +306,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         FantaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FantaButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Fanta Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 1.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                FantaButton.setBackgroundResource(R.drawable.buttonchange);
+                mDatabase.child("Fanta").setValue("£1.00");
             }
         });
 
@@ -276,8 +318,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         SpriteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SpriteButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Sprite Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 1.00;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                SpriteButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Sprite").setValue("£1.00");
             }
         });
 
@@ -285,8 +331,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         WaterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WaterButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Water Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 1.20;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                WaterButton.setBackgroundResource(R.drawable.buttonchange);
+                mDatabase.child("Water").setValue("£1.20");
             }
         });
 
@@ -294,14 +343,60 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         SparklingWaterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SparklingWaterButton.setTextColor(Color.GREEN);
-                Toast.makeText(getActivity(), "Sparkling Water Added", Toast.LENGTH_SHORT).show();
+                Total[0] += 1.50;
+                final TextView TotalView = (TextView) getActivity().findViewById(R.id.TotalView);
+                TotalView.setText("£  " + String.valueOf(Total[0]));
+                SparklingWaterButton.setBackgroundResource(R.drawable.buttonchange);
+
+                mDatabase.child("Sparkling Water").setValue("£1.50");
             }
         });
 
+        final TextView ConfirmView = (TextView) getActivity().findViewById(R.id.ConfirmView);
+        final TextView CashView = (TextView) getActivity().findViewById(R.id.CashView);
+        CashView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConfirmView.setVisibility(View.VISIBLE);
+                if (Total[0] > 3.0 && Total[0] < 30.01) {
+                    ConfirmView.setVisibility(View.VISIBLE);
+                    Toast.makeText(getActivity(), "Confirm Order", Toast.LENGTH_SHORT).show();
+                    SparklingWaterButton.setEnabled(false);
+                    WaterButton.setEnabled(false);
+                    SpriteButton.setEnabled(false);
+                    FantaButton.setEnabled(false);
+                    DietCokeButton.setEnabled(false);
+                    CokeButton.setEnabled(false);
+                    VLasagnaButton.setEnabled(false);
+                    MLasagnaButton.setEnabled(false);
+                    SaladButton.setEnabled(false);
+                    HamButton.setEnabled(false);
+                    VegButton.setEnabled(false);
+                    CarbonaraButton.setEnabled(false);
+                    BologneseButton.setEnabled(false);
+                    FruitButton.setEnabled(false);
+                    PlainButton.setEnabled(false);
+                    ChocolateButton.setEnabled(false);
+                    ToastButton.setEnabled(false);
+                    SausageButton.setEnabled(false);
+                    BaconButton.setEnabled(false);
 
 
-    }
+                }else{
+                    ConfirmView.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+            ConfirmView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), Checkout.class);
+                    startActivity(intent);
+                    mDatabase.child("Order Confirmed").setValue("Order Confirmed");
+                }
+            });
+
+        }
 
 
 
@@ -321,3 +416,51 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     }
 }
 
+
+
+
+
+
+/*
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+*/
+
+
+  /*
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+
+        }
+    }
+*/
+  /*
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+
+        }
+    }
+*/
+
+
+ /*
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+*/
